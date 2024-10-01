@@ -51,11 +51,31 @@ const InputSubCategory = ({ categoryId, selectedSubCategory, onSubCategoryChange
     }
   };
 
+  const handleAddSubCategory = () => {
+    // Implement the functionality to add a new subcategory here
+    console.log("Add Sub Category button clicked");
+  };
+
   return (
     <div className="w-full h-auto p-3 bg-white shadow-md rounded-2xl space-y-3" ref={dropdownRef}>
       <div className="flex justify-between items-center">
         <h2 className="text-sm poppins-semibold">Sub Kategori</h2>
-        
+        <button
+          onClick={handleAddSubCategory}
+          className="text-black-500 hover:text-gray-700"
+          aria-label="Add Sub Category"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="3"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+          </svg>
+        </button>
       </div>
       <div className="flex justify-center poppins-regular relative inline-block text-left w-full">
         <div className="w-full">

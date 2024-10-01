@@ -8,11 +8,12 @@ const InputPengadaan = ({ value, onProcurementChange }) => {
     value || "Pilih Jenis Pengadaan"
   );
   const [procurements, setProcurements] = useState([]);
-  const [isCreateOpen, setIsCreateOpen] = useState(false); // State untuk modal CreatePengadaan
+  const [isCreateOpen, setIsCreateOpen] = useState(false); // State for CreatePengadaan modal
 
   const dropdownRef = useRef(null);
 
   useEffect(() => {
+    // Fetch procurements when the component mounts
     axios
       .get("/procurements")
       .then((response) => {
@@ -44,17 +45,17 @@ const InputPengadaan = ({ value, onProcurementChange }) => {
     setSelectedProcurement(procurement.procurement_name);
     setIsOpen(false);
     if (onProcurementChange) {
-      onProcurementChange(procurement.id);
+      onProcurementChange(procurement.id); // Pass the ID to the parent component
     }
   };
 
   const handleAddProcurement = () => {
-    setIsCreateOpen(true); // Buka modal saat ikon tambah diklik
+    setIsCreateOpen(true); // Open modal when add icon is clicked
   };
 
   const closeCreateModal = () => {
-    setIsCreateOpen(false); // Tutup modal CreatePengadaan
-    // Fetch kembali daftar pengadaan setelah menambah pengadaan baru
+    setIsCreateOpen(false); // Close CreatePengadaan modal
+    // Refetch procurements after adding a new one
     axios
       .get("/procurements")
       .then((response) => {
@@ -69,7 +70,7 @@ const InputPengadaan = ({ value, onProcurementChange }) => {
     <div className="w-full h-auto p-3 bg-white shadow-md rounded-2xl space-y-3" ref={dropdownRef}>
       <div className="flex justify-between items-center">
         <h2 className="text-sm poppins-semibold">Jenis Pengadaan</h2>
-        {/* Ikon tambah */}
+        {/* Add icon */}
         <button
           type="button"
           onClick={handleAddProcurement}
@@ -146,7 +147,7 @@ const InputPengadaan = ({ value, onProcurementChange }) => {
         )}
       </div>
 
-      {/* Modal untuk CreatePengadaan */}
+      {/* Modal for CreatePengadaan */}
       <CreatePengadaan isOpen={isCreateOpen} onClose={closeCreateModal} />
     </div>
   );

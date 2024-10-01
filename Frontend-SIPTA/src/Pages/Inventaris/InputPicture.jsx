@@ -1,39 +1,22 @@
-import React, { useState } from "react";
-import { AiFillPicture } from "react-icons/ai";
+import React from 'react';
 
-const InputPicture = ({ value, onChange, fileName }) => {
-  // const [fileName, setFileName] = useState(value || "Masukkan Gambar");
-
-  // const handleImageChange = (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     setFileName(file.name);
-  //     onChange(file); // Pass the selected file to the parent component
-  //   }
-  // };
-
+const InputItemImage = ({ item_image, onChange }) => {
   return (
     <div className="w-full h-auto p-3 bg-white shadow-md rounded-2xl space-y-3">
       <div className="flex justify-between items-center">
-        <h2 className="text-sm poppins-semibold">Gambar (Maks 2MB)</h2>
+        <h2 className="text-sm poppins-semibold">Gambar Barang</h2>
       </div>
-      <div className="flex flex-col items-center space-y-4">
-        <div className="relative w-full">
-          <input
-            type="file"
-            accept="image/*"
-            // onChange={handleImageChange} // Use internal handler
-            onChange={onChange}
-            className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-          />
-          <div className="flex items-center poppins-regular text-sm text-gray-400 w-full h-full border border-gray-300 rounded-md px-2 py-1 bg-white cursor-pointer">
-            <AiFillPicture className="mr-2" />
-            {fileName}
-          </div>
-        </div>
+      <div className="flex justify-center poppins-regular relative inline-block text-left w-full">
+        <input
+          type="file"
+          name="item_image"
+          accept="image/*"
+          onChange={onChange}
+          className=" block w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        />
       </div>
     </div>
   );
 };
 
-export default InputPicture;
+export default InputItemImage;

@@ -4,18 +4,16 @@ const InputName = ({ value, onChange }) => {
   return (
     <div className="w-full h-auto p-3 bg-white shadow-md rounded-2xl space-y-3">
       <div className="flex justify-between items-center">
-        <h2 className="text-sm poppins-semibold">Nama Barang</h2>
+        <h2 className="text-sm poppins-semibold">Nama Item</h2>
       </div>
-      <div id="InputForm">
+      <div className="flex justify-center poppins-regular relative inline-block text-left w-full">
         <input
-          name="nama_barang"
           type="text"
+          name="item_name"
           value={value}
           onChange={onChange}
-          placeholder="Masukkan Nama Barang"
-          className="poppins-regular text-xs w-full h-8 p-1 border rounded-lg text-[#919191]"
-          style={{ color: "black" }}
-          required
+          placeholder="Masukkan Nama Item"
+          className="w-full p-2 border rounded"
         />
       </div>
     </div>

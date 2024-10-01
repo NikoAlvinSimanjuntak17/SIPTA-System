@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
@@ -51,11 +50,36 @@ const InputCategory = ({ procurementId, selectedCategory, onCategoryChange }) =>
     }
   };
 
+  const handleAddCategory = () => {
+    // Tambahkan logika untuk membuka modal atau menambah kategori di sini
+    console.log("Tambah kategori baru");
+  };
+
   return (
     <div className="w-full h-auto p-3 bg-white shadow-md rounded-2xl space-y-3" ref={dropdownRef}>
       <div className="flex justify-between items-center">
         <h2 className="text-sm poppins-semibold">Kategori</h2>
-        
+        {/* Ikon tambah */}
+        <button
+          type="button"
+          onClick={handleAddCategory}
+          className="text-black-500 hover:text-gray-700"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="3"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+        </button>
       </div>
       <div className="flex justify-center poppins-regular relative inline-block text-left w-full">
         <div className="w-full">

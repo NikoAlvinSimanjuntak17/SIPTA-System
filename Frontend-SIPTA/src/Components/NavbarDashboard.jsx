@@ -30,8 +30,8 @@ const NavbarDashboard = () => {
         return "Dashboard";
       case "/tabel-inventory":
         return "Tabel Inventaris";
-      case "/input-barang":
-        return "Input Inventaris";
+      case "/input-inventaris":
+        return "Input Barang Inventaris";
       case "/notification":
         return "Tabel Sisa Masa Barang Pinjaman";
       case "/tabel-pengadaan":
