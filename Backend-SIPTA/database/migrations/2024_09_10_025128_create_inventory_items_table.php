@@ -12,6 +12,8 @@ class CreateInventoryItemsTable extends Migration
         Schema::create('inventory_items', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('sub_category_id');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('procurement_id');
             $table->string('item_name');
             $table->string('quality');
             $table->integer('quantity');
@@ -23,6 +25,8 @@ class CreateInventoryItemsTable extends Migration
             $table->string('location');
             $table->unsignedBigInteger('created_by_user_id');
             $table->foreign('sub_category_id')->references('id')->on('sub_categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('procurement_id')->references('id')->on('procurements')->onDelete('cascade');
             $table->foreign('created_by_user_id')->references('id')->on('users');
             $table->timestamps();
         });

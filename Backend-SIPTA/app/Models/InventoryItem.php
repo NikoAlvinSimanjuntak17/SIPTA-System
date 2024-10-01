@@ -8,27 +8,40 @@ use Illuminate\Database\Eloquent\Model;
 class InventoryItem extends Model
 {
     use HasFactory;
-    protected $table = 'inventory_item';
+
     protected $fillable = [
-        'kategori_input',
-        'nama_barang',
-        'tipe_barang',
-        'kualitas',
-        'tanggal',
-        'tanggal_awal_pinjam',
-        'tanggal_akhir_pinjam',
-        'divisi_peminjam',
-        'nama_peminjam',
-        'tujuan_keluar',
-        'sn',
-        'jumlah',
-        'satuan',
-        'keterangan',
-        'lokasi',
-        'picture',
-        'bukti',
+        'sub_category_id',
+        'category_id',
+        'procurement_id',
+        'item_name',
+        'quality',
+        'quantity',
+        'status',
+        'serial_number',
+        'item_image',
+        'unit',
         'work_unit',
-        'status_barang',
-        'solusi_barang'
+        'location',
+        'created_by_user_id',
     ];
+
+    public function subCategory()
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function procurement()
+    {
+        return $this->belongsTo(Procurement::class);
+    }
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by_user_id');
+    }
 }

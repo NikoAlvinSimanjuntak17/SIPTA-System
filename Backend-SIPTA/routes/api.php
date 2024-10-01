@@ -29,10 +29,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('sub-categories', SubCategoryController::class);
     Route::get('subcategories-with-category', [SubCategoryController::class, 'getSubCategoriesWithCategory']);
     Route::get('subcategories/by-category-id/{category_id}', [SubCategoryController::class, 'getSubCategoriesByCategoryId']);
+    Route::apiResource('inventory-items', InventoryItemController::class);
 
 });
-
 Route::post('/login', [AuthController::class, 'auth']);
+
 Route::get('public-post-list', [PostController::class, 'postList']);
 
 //Input-Barang
