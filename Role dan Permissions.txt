@@ -1,0 +1,87 @@
+Permissions dan Role yang Lengkap
+1. Admin
+Admin memiliki hak akses penuh terhadap semua fungsi. Berikut daftar permissions untuk admin:
+
+register-user: Menambah akun staff atau EOS
+add-procurement: Menambah data pengadaan
+edit-procurement: Mengedit data pengadaan
+delete-procurement: Menghapus data pengadaan
+view-procurement: Melihat data pengadaan
+add-category: Menambah kategori
+delete-category: Menghapus kategori
+view-category: Melihat kategori
+add-subcategory: Menambah sub kategori
+delete-subcategory: Menghapus sub kategori
+view-subcategory: Melihat sub kategori
+add-inventory: Menambah barang inventaris
+edit-inventory: Mengedit barang inventaris
+delete-inventory: Menghapus barang inventaris
+view-inventory: Melihat barang inventaris
+add-loan: Menambah peminjaman barang
+edit-loan: Mengedit peminjaman
+delete-loan: Menghapus peminjaman
+view-loan: Melihat tabel peminjaman
+add-transfer: Menambah data transfer (dulu serah terima)
+edit-transfer: Mengedit transfer
+delete-transfer: Menghapus transfer
+view-transfer: Melihat tabel transfer
+add-damage: Menambah data kerusakan
+edit-damage: Mengedit kerusakan
+delete-damage: Menghapus kerusakan
+view-damage: Melihat tabel kerusakan
+approve-loan: Menyetujui atau menolak peminjaman
+approve-transfer: Menyetujui atau menolak transfer
+view-history: Melihat riwayat barang inventaris
+edit-profile: Mengedit profil
+view-profile: Melihat profil
+print-loan-report: Mencetak laporan peminjaman
+print-transfer-report: Mencetak laporan transfer
+print-damage-report: Mencetak laporan kerusakan
+logout: Keluar dari sistem
+2. EOS (Executive Office Staff)
+EOS memiliki akses lebih terbatas dibanding admin, namun tetap dapat mengelola pengadaan, kategori, subkategori, barang inventaris, dan laporan.
+
+add-procurement
+edit-procurement
+delete-procurement
+view-procurement
+add-category
+delete-category
+view-category
+add-subcategory
+delete-subcategory
+view-subcategory
+add-inventory
+edit-inventory
+delete-inventory
+view-inventory
+add-loan
+add-transfer
+add-damage
+edit-damage
+delete-damage
+view-damage
+view-loan
+view-transfer
+view-history
+edit-profile
+view-profile
+print-loan-report
+print-transfer-report
+print-damage-report
+logout
+3. Staff
+Staff memiliki hak akses paling terbatas, biasanya hanya dapat melakukan peminjaman, transfer, serta melihat data terkait.
+
+view-procurement
+view-category
+view-subcategory
+view-inventory
+add-loan
+view-loan
+add-transfer
+view-transfer
+view-history
+edit-profile
+view-profile
+logout
